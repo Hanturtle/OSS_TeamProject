@@ -3,7 +3,7 @@
 ### 설명
 ____________________________________________________
 
-![MemoSQL]()
+![MemoSQL](https://github.com/Hooooong/DAY14_SQLiteMemo/blob/master/image/SQLMemo.gif)
 
 - SQLite 를 통해 메모 작성
 - 간단한 데이터 읽기, 삽입, 수정, 삭제(수정과 삭제는 마지막 데이터를 이용하였다.)
@@ -17,11 +17,13 @@ ____________________________________________________
 
 - DAO 를 통한 데이터 접근
 
-  - DAO : __D__ata __A__ccess __O__bject 의 약자로 이름과 같이 Data Access 에 관련된 Objet이다.
+  - DAO : __D__ ata __A__ ccess __O__ bject 의 약자로 이름과 같이 Data Access 에 관련된 Objet이다.
 
   - 단일 Data 에 관련된 접근 및 갱신을 주로 담당하는 Object 로  `Memo` 데이터에 관련된 접근과 갱신에 대한 로직 처리가 담겨있다.
 
   - DB에 대한 생성 및 접근은 `DBHelper`에 대한 Class 를 통해 이루어지기 때문에 DAO 생성자를 통해 연결한다.
+
+  - 데이터 `C(Create)`, `R(Read)`, `U(Update)`, `D(Delete)` 에 관련된 메소드를 작성한다.
 
   ```java
   DBHelper dbHelper;
@@ -30,11 +32,7 @@ ____________________________________________________
       // 1. 데이터베이스에 연결
       this.dbHelper = new DBHelper(context);
   }
-  ```
 
-  - 데이터 `C(Create)`, `R(Read)`, `U(Update)`, `D(Delete)` 에 관련된 메소드를 작성한다.
-
-  ```java
   /**
    * C: 삽입에 관련된 함수
    *
