@@ -67,6 +67,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //버튼을 사용하지 않고 아이템을 길게 클릭하였을때 삭제창을 띄우기
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final long deleteId = l;
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("메모 삭제")
+                        .setMessage("메모를 삭제하시겠습니까?")
+                        .setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                SQLiteDatabase database = MemoDbHelper.getInstance(MainActivity.this).getWritableDatabase();
+                                //테이블이름이 Memo.db인 테이블에서 선택한 id에 해당하는 내용을 지운다.
+                                int deleteCount = database.delete(MemoContract.MemoEntry.TABLE_NAME,
+                                        MemoContract.MemoEntry._ID + " = " + deleteId, null);
+
+                                //삭제가 성공적으로 이루어졌는지를 판별하기위해 toast를 띄운다.
+                                if(deleteCount == 0){
+                                    Toast.makeText(MainActivity.this, "삭제에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
+                                } else{
+                                    Toast.makeText(MainActivity.this, "삭제되었습니다", Toast.LENGTH_LONG).show();
+                                    mAdapter.swapCursor(getMemoCursor());
+                                }
+                            }
+                        })
+                        .setNegativeButton("취소", null)
+                        .show();
+
+                return true;
+            }
+        });
     }
 
     private Cursor getMemoCursor() {

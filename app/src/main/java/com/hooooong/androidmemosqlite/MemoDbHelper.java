@@ -20,6 +20,9 @@ public class MemoDbHelper extends SQLiteOpenHelper {
                     MemoContract.MemoEntry.COLUMN_NAME_TITLE,
                     MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS);
 
+    //테이블 삭제
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + MemoContract.MemoEntry.TABLE_NAME;
 
     //객체를 가져와 MemoDbHelper을 수행함
     public static MemoDbHelper getInstance(Context context) {
@@ -42,6 +45,7 @@ public class MemoDbHelper extends SQLiteOpenHelper {
     //자동으로 생성된 번호에 해당하는 데이터들을 삭제/수정하는 메소드
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES);
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
     }
 }
