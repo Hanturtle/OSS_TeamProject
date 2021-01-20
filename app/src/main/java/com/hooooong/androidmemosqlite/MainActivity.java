@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //앱 UI의 기본 작업을 트리거하는 원형 버튼인 플로팅 버튼을 사용함
+        //이 버튼을 클릭하였을때 MemoActivity로 액티비티를 넘겨줌
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(MainActivity.this, MemoActivity.class), REQUEST_CODE_INSERT);
+            }
+        });
+
 
         ListView listView = findViewById(R.id.memo_list);
 
