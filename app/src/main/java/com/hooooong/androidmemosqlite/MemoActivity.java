@@ -37,53 +37,5 @@ public class MemoActivity extends AppCompatActivity {
             mInfoTextView.setText(String.valueOf(mMemoId)+"번째 글입니다.");
         }
     }
-
-
-
-
-    //버튼 이벤트 -> 입력한 정보들 db에 저장하고 목록으로 넘어가기
-    public void onClickMain(View view) {
-
-        //입력받을것이 제목과 내용이므로 문자열 변수 선언해줌
-        String title = mTitleEditText.getText().toString();
-        String contents = mContentsEditText.getText().toString();
-
-        //글의 번호는 자동으로 생성되므로 제목과 내용만 추가해준다.
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(MemoContract.MemoEntry.COLUMN_NAME_TITLE, title);
-        contentValues.put(MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS, contents);
-
-        //db에 추가하기
-        SQLiteDatabase db = MemoDbHelper.getInstance(this).getWritableDatabase();
-
-        //커서는 -1 위치에서 시작 함
-        if(mMemoId == -1) {
-            long newRowId = db.insert(MemoContract.MemoEntry.TABLE_NAME
-                    , null
-                    , contentValues);
-
-            //저장관련 소스 성공 및 실패 toast 띄워주기
-            if (newRowId == -1) {
-                Toast.makeText(this, "저장에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
-                ;
-            } else {
-                Toast.makeText(this, "메모가 저장되었습니다", Toast.LENGTH_LONG).show();
-                setResult(RESULT_OK);
-            }
-        }
-        //수정 관련 소스 성공 및 실패 toast 띄워주기
-        else{
-            int count = db.update(MemoContract.MemoEntry.TABLE_NAME, contentValues,
-                    MemoContract.MemoEntry._ID + "=" + mMemoId, null);
-
-            if(count == 0){
-                Toast.makeText(this, "수정에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "메모가 수정되었습니다", Toast.LENGTH_LONG).show();
-                setResult(RESULT_OK);
-            }
-        }
-
-        super.onBackPressed();
-    }
+    
 }
