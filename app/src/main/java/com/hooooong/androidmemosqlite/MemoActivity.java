@@ -56,6 +56,27 @@ public class MemoActivity extends AppCompatActivity {
         //db에 추가하기
         SQLiteDatabase db = MemoDbHelper.getInstance(this).getWritableDatabase();
 
+        //커서는 -1 위치에서 시작 함
+        if(mMemoId == -1) {
+            long newRowId = db.insert(MemoContract.MemoEntry.TABLE_NAME , null , contentValues);
+
+            //저장관련 소스 성공 toast 띄워주기
+            if (newRowId == -1) {
+                Toast.makeText(this, "저장에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
+                ;
+            } 
+        }
+        //수정 관련 소스 성공 toast 띄워주기
+        else{
+            int count = db.update(MemoContract.MemoEntry.TABLE_NAME, contentValues,
+                    MemoContract.MemoEntry._ID + "=" + mMemoId, null);
+
+           if(count != 0){
+                Toast.makeText(this, "메모가 수정되었습니다", Toast.LENGTH_LONG).show();
+                setResult(RESULT_OK);
+            }
+        }
+
         super.onBackPressed();
     }
 }
