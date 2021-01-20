@@ -37,5 +37,25 @@ public class MemoActivity extends AppCompatActivity {
             mInfoTextView.setText(String.valueOf(mMemoId)+"번째 글입니다.");
         }
     }
-    
+
+
+
+
+    //버튼 이벤트 -> 입력한 정보들 db에 저장하고 목록으로 넘어가기
+    public void onClickMain(View view) {
+
+        //입력받을것이 제목과 내용이므로 문자열 변수 선언해줌
+        String title = mTitleEditText.getText().toString();
+        String contents = mContentsEditText.getText().toString();
+
+        //글의 번호는 자동으로 생성되므로 제목과 내용만 추가해준다.
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MemoContract.MemoEntry.COLUMN_NAME_TITLE, title);
+        contentValues.put(MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS, contents);
+
+        //db에 추가하기
+        SQLiteDatabase db = MemoDbHelper.getInstance(this).getWritableDatabase();
+
+        super.onBackPressed();
+    }
 }
