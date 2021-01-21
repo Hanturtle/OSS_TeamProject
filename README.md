@@ -106,7 +106,7 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 
 2. 플로팅 작업 버튼 사용
 + activity_main.xml
-	- [플로팅 작업 버튼] (https://developer.android.com/guide/topics/ui/floating-action-button?hl=ko) 개발자 문서를 참고하여 구현하였다.
+	- [플로팅 작업 버튼] [https://developer.android.com/guide/topics/ui/floating-action-button?hl=ko] 개발자 문서를 참고하여 구현하였다.
 ``` xml
 <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -178,24 +178,24 @@ listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 + DB관련 코드 수정
 	- 추가
     	+ MemoActivity.java
-``` java
-public void onClickMain(View view) {
+	``` java
+	public void onClickMain(View view) {
 
-    //입력받을것이 제목과 내용이므로 문자열 변수 선언해줌
-    String title = mTitleEditText.getText().toString();
-    String contents = mContentsEditText.getText().toString();
+	    //입력받을것이 제목과 내용이므로 문자열 변수 선언해줌
+	    String title = mTitleEditText.getText().toString();
+	    String contents = mContentsEditText.getText().toString();
 
-    //글의 번호는 자동으로 생성되므로 제목과 내용만 추가해준다.
-    ContentValues contentValues = new ContentValues();
-    contentValues.put(MemoContract.MemoEntry.COLUMN_NAME_TITLE, title);
-    contentValues.put(MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS, contents);
+	    //글의 번호는 자동으로 생성되므로 제목과 내용만 추가해준다.
+	    ContentValues contentValues = new ContentValues();
+	    contentValues.put(MemoContract.MemoEntry.COLUMN_NAME_TITLE, title);
+	    contentValues.put(MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS, contents);
 
-    //db에 추가하기
-    SQLiteDatabase db = MemoDbHelper.getInstance(this).getWritableDatabase();
+	    //db에 추가하기
+	    SQLiteDatabase db = MemoDbHelper.getInstance(this).getWritableDatabase();
 
-```
+		```
 <br>
-		+ MemoDbHelper.java
+	+ MemoDbHelper.java
 <br>
 
 ``` java
@@ -212,8 +212,8 @@ private static final String SQL_CREATE_ENTRIES =
 ```
 <br>
 
-	- 삭제
-    	+ MemoDbHelper.java
+- 삭제
+    + MemoDbHelper.java
 <br>
         
 ``` java
@@ -253,17 +253,16 @@ else{
     }
 }
 ```
-5. 전체적인 디자인 통일
-6. 앱 아이콘 변경
+<br>
 
-<br><br><br>
-
-![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)  **앱 아이콘 변경** <br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>
+5. 앱 아이콘 변경 <br>
+![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)
+6. 전체적인 디자인 통일
+<br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>
 **리스트 액티비팉, 메모 작성 액티비티, 메모 보기 액티비티** <br>
 ![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
 <br>
-
-** Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제** 
+** Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제 ** 
 
 <br><br>
 
