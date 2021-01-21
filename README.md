@@ -256,15 +256,12 @@ listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 <br>
 
 5. 앱 아이콘 변경 <br>
-![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)
+![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png) <br>
 6. 전체적인 디자인 통일
 <br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>
-**리스트 액티비팉, 메모 작성 액티비티, 메모 보기 액티비티** <br>
-![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
-<br>
-**Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제** 
-
-<br><br>
+**리스트 액티비티, 메모 작성 액티비티, 메모 보기 액티비티** <br>
+![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png) <br>
+**Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제** <br><br>
 
 ## 결과물
 ### 시연 영상
