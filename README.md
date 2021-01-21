@@ -62,10 +62,10 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 ## 결과물
 ### 시연 영상
 
-[테스트용 폰 시연영상](https://www.youtube.com/watch?v=LQX-537yh3E&feature=youtu.be)
+[![테스트용 폰 시연영상](https://img.youtube.com/vi/LQX-537yh3E/0.jpg)](https://www.youtube.com/watch?v=LQX-537yh3E&feature=youtu.be)
 <br>
 
-[에뮬레이터 시연영상](https://www.youtube.com/watch?v=zHqHyl9sqew&feature=youtu.be)
+[![에뮬레이터 시연영상](https://img.youtube.com/vi/zHqHyl9sqew/0.jpg)](https://www.youtube.com/watch?v=zHqHyl9sqew&feature=youtu.be)
 
 <br>
 
