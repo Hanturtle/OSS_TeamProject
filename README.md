@@ -1,9 +1,12 @@
 # SQLite를 활용한 안드로이드 메모장 앱 
 조선대 20년 겨울학기 오픈소스프로젝트 팀프로젝트 4조<br>
+<br>
 
 ## 목적
 ### 개발 주제
-2학년때 배운 **자바** 와 3학년 2학기에 배운 **DB** 를 활용할 수 있는 프로젝트를 찾다가 **'SQLite를 사용한 안드로이드 메모장 어플'** 을 만들게되었다.<br>
+2학년때 배운 **자바** 와 3학년 2학기에 배운 **DB** 를 활용할 수 있는 프로젝트를 찾다가 **'SQLite를 사용한 안드로이드 메모장 어플'** 을 만들게되었다.
+<br>
+
 ### Fork한 프로젝트
 >[Hooooong/DAY14_SQLiteMemo](https://github.com/Hooooong/DAY14_SQLiteMemo)
 
@@ -33,6 +36,7 @@ VM : OpenJDK 64-Bit Server VM by JetBrains s.r.o
 --------- | --------- | --------- | ---------
 한지원 (팀장)| 김수현 | 박인하 | 유정연
 Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB 삭제 기능 구현<br>앱 디자인 수정 |DB 등록 기능 구현<br>앱 디자인 수정 | DB 수정 기능 구현<br>앱 아이콘 등록
+
 <br><br>
 
 ## 설계 및 구현
@@ -48,6 +52,9 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 4. 기능별로 잘 작동하였는지 Toast 메시지 띄우기
 5. 전체적인 디자인 통일
 6. 앱 아이콘 변경
+
+<br>
+
 ![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)<br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
 
 <br><br>
@@ -56,6 +63,8 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 ### 시연 영상
 
 [테스트용 폰 시연영상](https://www.youtube.com/watch?v=LQX-537yh3E&feature=youtu.be)
+<br>
+
 [에뮬레이터 시연영상](https://www.youtube.com/watch?v=zHqHyl9sqew&feature=youtu.be)
 
 <br>
@@ -64,3 +73,4 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 >[APK 다운로드](https://blog.naver.com/tjfdnjs0829/222214839904)
 
 다운로드 페이지 댓글로 피드백이나 질문주시면 감사하겠습니다 😊
+<br><br>
