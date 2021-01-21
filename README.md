@@ -106,7 +106,7 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 
 2. 플로팅 작업 버튼 사용
 + activity_main.xml
-	- [플로팅 작업 버튼] [https://developer.android.com/guide/topics/ui/floating-action-button?hl=ko] 개발자 문서를 참고하여 구현하였다.
+	- [플로팅 작업 버튼](https://developer.android.com/guide/topics/ui/floating-action-button?hl=ko) 개발자 문서를 참고하여 구현하였다.
 ``` xml
 <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -176,6 +176,7 @@ listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
 4. 기능별로 잘 작동하였는지 Toast 메시지 띄우기
 **DB관련 코드 수정** 
+> [SQLite](https://developer.android.com/training/data-storage/sqlite?hl=ko#java) 개발자용 문서를 참고하였음.
 + 추가
     - MemoActivity.java
 	``` java
