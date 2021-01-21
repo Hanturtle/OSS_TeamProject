@@ -14,9 +14,7 @@
 
 ### 구현 환경<br>
 
->안드로이드스튜디오 4.0.1
-Runtime version : 1.8.0
-VM : OpenJDK 64-Bit Server VM by JetBrains s.r.o
+>안드로이드스튜디오 4.0.1 <br> Runtime version : 1.8.0 <br> VM : OpenJDK 64-Bit Server VM by JetBrains s.r.o
 
 <br>
 
@@ -37,7 +35,7 @@ VM : OpenJDK 64-Bit Server VM by JetBrains s.r.o
 한지원 (팀장)| 김수현 | 박인하 | 유정연
 Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB 삭제 기능 구현<br>앱 디자인 수정 |DB 등록 기능 구현<br>앱 디자인 수정 | DB 수정 기능 구현<br>앱 아이콘 등록
 
-<br><br>
+<br><br><br>
 
 ## 설계 및 구현
 ### 기존 코드 분석
@@ -53,18 +51,24 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 5. 전체적인 디자인 통일
 6. 앱 아이콘 변경
 
+<br><br><br>
+
+![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)  **앱 아이콘 변경** <br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>
+**리스트 액티비팉, 메모 작성 액티비티, 메모 보기 액티비티** <br>
+![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
 <br>
 
-![](https://images.velog.io/images/hanturtle/post/f09fc218-7f5b-41ed-822f-f1075204f3ef/image.png)<br>![](https://images.velog.io/images/hanturtle/post/b2e1362c-39b8-4eb7-8744-0d5e61812a82/image.png)<br>![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
+** Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제** 
 
 <br><br>
 
 ## 결과물
 ### 시연 영상
-
+#### 테스트용 폰 시연 영상 <br>
 [![테스트용 폰 시연영상](https://img.youtube.com/vi/LQX-537yh3E/0.jpg)](https://www.youtube.com/watch?v=LQX-537yh3E&feature=youtu.be)
 <br>
 
+#### 에뮬레이터 시연 영상 <br>
 [![에뮬레이터 시연영상](https://img.youtube.com/vi/zHqHyl9sqew/0.jpg)](https://www.youtube.com/watch?v=zHqHyl9sqew&feature=youtu.be)
 
 <br>
@@ -72,5 +76,6 @@ Fork 후, 전체 버전 수정<br>액티비티 분할<br>전체 DB 관리| DB �
 ### 앱 설치 링크
 >[APK 다운로드](https://blog.naver.com/tjfdnjs0829/222214839904)
 
+<br>
 다운로드 페이지 댓글로 피드백이나 질문주시면 감사하겠습니다 😊
 <br><br>
