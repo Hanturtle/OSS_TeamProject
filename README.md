@@ -175,9 +175,9 @@ listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 <br>
 
 4. 기능별로 잘 작동하였는지 Toast 메시지 띄우기
-+ DB관련 코드 수정
-	- 추가
-    	+ MemoActivity.java
+**DB관련 코드 수정** 
++ 추가
+    - MemoActivity.java
 	``` java
 	public void onClickMain(View view) {
 
@@ -195,64 +195,64 @@ listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
 		```
 <br>
-	+ MemoDbHelper.java
+	- MemoDbHelper.java
 <br>
 
-``` java
-//Memo이름을 가진 DB 생성,title, contents 필드 포함
-//ID 값은 정수형으로 자동으로 생성하여 primary key로 설정함
-private static final int DB_VERSION = 1;
-private static final String DB_NAME = "Memo.db";
-private static final String SQL_CREATE_ENTRIES =
-        String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT)",
-                MemoContract.MemoEntry.TABLE_NAME,
-                MemoContract.MemoEntry._ID,
-                MemoContract.MemoEntry.COLUMN_NAME_TITLE,
-                MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS);
-```
+	``` java
+	//Memo이름을 가진 DB 생성,title, contents 필드 포함
+	//ID 값은 정수형으로 자동으로 생성하여 primary key로 설정함
+	private static final int DB_VERSION = 1;
+	private static final String DB_NAME = "Memo.db";
+	private static final String SQL_CREATE_ENTRIES =
+		String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT)",
+			MemoContract.MemoEntry.TABLE_NAME,
+			MemoContract.MemoEntry._ID,
+			MemoContract.MemoEntry.COLUMN_NAME_TITLE,
+			MemoContract.MemoEntry.COMLUMN_NAME_CONTENTS);
+	```
 <br>
 
-- 삭제
-    + MemoDbHelper.java
++ 삭제
+    - MemoDbHelper.java
 <br>
         
-``` java
-//테이블 삭제
-    private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + MemoContract.MemoEntry.TABLE_NAME;
-```
+	``` java
+	//테이블 삭제
+	    private static final String SQL_DELETE_ENTRIES =
+		    "DROP TABLE IF EXISTS " + MemoContract.MemoEntry.TABLE_NAME;
+	```
 <br>
 
 + MemoActivity.java
 	- Toast 메시지 띄우기
-``` java
-//커서는 -1 위치에서 시작 함
-if(mMemoId == -1) {
-    long newRowId = db.insert(MemoContract.MemoEntry.TABLE_NAME, null, contentValues);
+	``` java
+	//커서는 -1 위치에서 시작 함
+	if(mMemoId == -1) {
+	    long newRowId = db.insert(MemoContract.MemoEntry.TABLE_NAME, null, contentValues);
 
-    //저장관련 소스 성공 및 실패 toast 띄워주기
-    if (newRowId == -1) {
-        Toast.makeText(this, "저장에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
-        ;
-    } else {
-        Toast.makeText(this, "메모가 저장되었습니다", Toast.LENGTH_LONG).show();
-        setResult(RESULT_OK);
-    }
-}
+	    //저장관련 소스 성공 및 실패 toast 띄워주기
+	    if (newRowId == -1) {
+		Toast.makeText(this, "저장에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
+		;
+	    } else {
+		Toast.makeText(this, "메모가 저장되었습니다", Toast.LENGTH_LONG).show();
+		setResult(RESULT_OK);
+	    }
+	}
 
-//수정 관련 소스 성공 및 실패 toast 띄워주기
-else{
-    int count = db.update(MemoContract.MemoEntry.TABLE_NAME, contentValues,
-            MemoContract.MemoEntry._ID + "=" + mMemoId, null);
+	//수정 관련 소스 성공 및 실패 toast 띄워주기
+	else{
+	    int count = db.update(MemoContract.MemoEntry.TABLE_NAME, contentValues,
+		    MemoContract.MemoEntry._ID + "=" + mMemoId, null);
 
-    if(count == 0){
-        Toast.makeText(this, "수정에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
-    } else {
-        Toast.makeText(this, "메모가 수정되었습니다", Toast.LENGTH_LONG).show();
-        setResult(RESULT_OK);
-    }
-}
-```
+	    if(count == 0){
+		Toast.makeText(this, "수정에 문제가 발생하였습니다", Toast.LENGTH_LONG).show();
+	    } else {
+		Toast.makeText(this, "메모가 수정되었습니다", Toast.LENGTH_LONG).show();
+		setResult(RESULT_OK);
+	    }
+	}
+	```
 <br>
 
 5. 앱 아이콘 변경 <br>
@@ -262,7 +262,7 @@ else{
 **리스트 액티비팉, 메모 작성 액티비티, 메모 보기 액티비티** <br>
 ![](https://images.velog.io/images/hanturtle/post/c28687e4-cce5-491b-93ea-31a667d6bb0f/image.png)
 <br>
-** Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제 ** 
+**Toast 메시지, 아이템 길게 클릭하였을때 메모 삭제** 
 
 <br><br>
 
